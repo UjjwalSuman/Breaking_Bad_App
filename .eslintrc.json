@@ -20,6 +20,6 @@
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "react/prop-types": "off",
     "no-param-reassign": ["error", { "props": false }],
-    "linebreak-style": ["error", "windows"]
+    "linebreak-style": ["error"]
   }
 }
