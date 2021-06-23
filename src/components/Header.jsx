@@ -1,6 +1,13 @@
-import { AppBar, makeStyles, Toolbar, Box, InputBase } from '@material-ui/core';
+import React from 'react';
+import {
+  AppBar,
+  makeStyles,
+  Toolbar,
+  Box,
+  InputBase,
+} from '@material-ui/core';
 import SearchIcon from '@material-ui/icons/Search';
-import breaking_bad from '../image/breaking_bad.jpg';
+import breakingBad from '../image/breaking_bad.jpg';
 
 const useStyle = makeStyles({
   header: {
@@ -33,15 +40,15 @@ const useStyle = makeStyles({
 const Header = ({ getText }) => {
   const classes = useStyle();
   return (
-    <AppBar className={classes.header} position='static'>
+    <AppBar className={classes.header} position="static">
       <Toolbar>
-        <img className={classes.image} src={breaking_bad} alt='breaking_bad' />
+        <img className={classes.image} src={breakingBad} alt="breaking_bad" />
         <Box className={classes.search}>
           <Box>
             <SearchIcon classes={{ root: classes.searchicon }} />
           </Box>
           <InputBase
-            placeholder='Search By Name'
+            placeholder="Search By Name"
             autoFocus
             classes={{ root: classes.inputBox }}
             onChange={(e) => getText(e.target.value)}

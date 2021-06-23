@@ -17,6 +17,9 @@
     "quotes": ["error", "single"],
     "no-console": "off",
     "max-len": ["error", { "code": 120 }],
-    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "react/prop-types": "off",
+    "no-param-reassign": ["error", { "props": false }],
+    "linebreak-style": ["error", "windows"]
   }
 }

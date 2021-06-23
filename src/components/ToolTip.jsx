@@ -1,4 +1,7 @@
-import { Card, makeStyles, Tooltip, Typography } from '@material-ui/core';
+import React from 'react';
+import {
+  Card, makeStyles, Tooltip, Typography,
+} from '@material-ui/core';
 
 const useStyle = makeStyles({
   img: {
@@ -13,7 +16,7 @@ const Character = ({ item }) => {
   return (
     <Card>
       <Tooltip
-        title={
+        title={(
           <>
             <Typography>
               Name:
@@ -28,11 +31,11 @@ const Character = ({ item }) => {
               {item.status}
             </Typography>
           </>
-        }
+        )}
         arrow
-        placement='top'
+        placement="top"
       >
-        <img src={item.img} className={classes.img} alt='character' />
+        <img src={item.img} className={classes.img} alt="character" />
       </Tooltip>
     </Card>
   );

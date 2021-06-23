@@ -1,3 +1,4 @@
+import React from 'react';
 import { Grid, Box } from '@material-ui/core';
 import ToolTip from './ToolTip';
 
@@ -19,7 +20,7 @@ const Characters = ({ data, isLoading }) => {
         <Grid container spacing={4}>
           {data.map((item) => (
             <Grid item xs={3} key={item.char_id}>
-              <ToolTip item={item} />;
+              <ToolTip item={item} />
             </Grid>
           ))}
         </Grid>
