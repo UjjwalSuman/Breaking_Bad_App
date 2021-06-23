@@ -2,11 +2,11 @@ import {
   combineReducers,
   getDefaultMiddleware,
   configureStore,
-} from "@reduxjs/toolkit";
-import { componentSlice } from "../service/component";
+} from '@reduxjs/toolkit';
+import { characterslice } from '../service/character';
 
 const rootReducer = combineReducers({
-  components: componentSlice.reducer,
+  character: characterslice.reducer,
 });
 
 const store = configureStore({
