@@ -1,12 +1,13 @@
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
 import { Box } from '@material-ui/core';
-import Header from './components/Header.jsx';
+import Header from './components/Header';
 import { getcharacters, getSearchedcharacters } from './service/character';
 import Characters from './components/Characters';
 
 const App = (props) => {
+  const { characters, isLoading } = props;
   useEffect(() => {
     props.getcharacters();
   }, []);
@@ -18,7 +19,7 @@ const App = (props) => {
   return (
     <Box>
       <Header getText={getText} />
-      <Characters data={props.characters} isLoading={props.isLoading} />
+      <Characters data={characters} isLoading={isLoading} />
     </Box>
   );
 };

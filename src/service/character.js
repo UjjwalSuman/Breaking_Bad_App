@@ -6,17 +6,17 @@ export const getcharacters = createAsyncThunk(
   async () => {
     const data = await axios.get('https://breakingbadapi.com/api/characters');
     return data.data;
-  }
+  },
 );
 
 export const getSearchedcharacters = createAsyncThunk(
   'CHARACTERS/SEARCH_CHARACTERS',
   async (text) => {
     const data = await axios.get(
-      `https://breakingbadapi.com/api/characters?name=${text}`
+      `https://breakingbadapi.com/api/characters?name=${text}`,
     );
     return data.data;
-  }
+  },
 );
 
 const initialState = {
