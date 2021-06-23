@@ -1,36 +1,36 @@
-import { useEffect, useState } from "react";
-import { compose } from "redux";
-import { connect } from "react-redux";
-import { Box } from "@material-ui/core";
-import Header from "./components/Header.jsx";
-import { getcomponents, getSearchedComponents } from "./service/component";
-import Characters from "./components/Characters";
+import { useEffect } from 'react';
+import { compose } from 'redux';
+import { connect } from 'react-redux';
+import { Box } from '@material-ui/core';
+import Header from './components/Header.jsx';
+import { getcharacters, getSearchedcharacters } from './service/character';
+import Characters from './components/Characters';
 
 const App = (props) => {
   useEffect(() => {
-    props.getComponents();
+    props.getcharacters();
   }, []);
 
   const getText = (text) => {
-    props.getSearchedComponents(text);
+    props.getSearchedcharacters(text);
   };
 
   return (
     <Box>
       <Header getText={getText} />
-      <Characters data={props.components} isLoading={props.isLoading} />
+      <Characters data={props.characters} isLoading={props.isLoading} />
     </Box>
   );
 };
 
 const mapStateToProps = (state) => ({
-  s: state.components.components,
-  isLoading: state.components.isLoading,
+  characters: state.character.characters,
+  isLoading: state.character.isLoading,
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  getComponents: () => dispatch(getComponent()),
-  getSearchedComponents: (text) => dispatch(getSearchedComponents(text)),
+  getcharacters: () => dispatch(getcharacters()),
+  getSearchedcharacters: (text) => dispatch(getSearchedcharacters(text)),
 });
 
 export default compose(connect(mapStateToProps, mapDispatchToProps))(App);
