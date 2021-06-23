@@ -9,7 +9,7 @@
 **Into the project directory**
 
 ```
-    cd BREAKING_BAD_APP
+    cd Breaking_Bad_App
 ```
 
 **Install npn dependencies**
